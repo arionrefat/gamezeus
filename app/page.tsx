@@ -2,6 +2,7 @@ import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
+import DropdownMenuRadioGroupCatagories from "@/components/custom/Categories"
 
 export default function IndexPage() {
   return (
