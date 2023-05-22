@@ -15,13 +15,18 @@ export const siteConfig = {
     },
     {
       title: 'Catagories',
-      href: '/news',
-      drwopdown: true,
-      items: [
+      dropdownItems: [
         {
-          apex: '/apex',
-          cod: '/cod',
-          valorant: '/valorant',
+          title: 'Apex',
+          href: '/apex',
+        },
+        {
+          title: 'Valorant',
+          href: '/valorant',
+        },
+        {
+          title: 'LOL',
+          href: '/lol',
         },
       ],
     },
