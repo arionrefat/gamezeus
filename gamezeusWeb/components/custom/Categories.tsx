@@ -17,6 +17,7 @@ import {
 
 interface DropdownMenuProps {
   title: string
+  key: number
   items: NavItem[]
 }
 
@@ -39,7 +40,11 @@ export default function DropdownMenuRadioGroupCatagories({
       </DropdownMenuTrigger>
       <DropdownMenuContent className='w-56'>
         <DropdownMenuSeparator />
-        <DropdownMenuRadioGroup value={position} onValueChange={setPosition}>
+        <DropdownMenuRadioGroup
+          value={position}
+          onValueChange={setPosition}
+          key={props.key}
+        >
           {props.items.map((item, index) => {
             return (
               <DropdownMenuRadioItem value={item.title}>

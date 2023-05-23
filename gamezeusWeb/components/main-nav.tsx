@@ -39,6 +39,7 @@ export function MainNav({ items }: MainNavProps) {
               <DropdownMenuRadioGroupCatagories
                 props={{
                   title: 'Categories',
+                  key: index,
                   items: item.dropdownItems as NavItem[],
                 }}
               />
