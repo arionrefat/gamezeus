@@ -35,7 +35,7 @@ export default function TabsCustom() {
           />
         </div>
       </TabsContent>
-      <TabsContent value='videos'>
+      <TabsContent value='Videos'>
         <BlogCardRectangle
           imgSrc='https://www.ggrecon.com/media/dhmmah05/apex-legends-season-16-balance-changes-all-buffs-and-nerfs-3.jpg'
           altName='apex image'
