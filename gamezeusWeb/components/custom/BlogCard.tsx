@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Image from 'next/image'
-
+import { BlogCardProps } from '@/types/blogs'
 import {
   Card,
   CardContent,
@@ -12,15 +12,7 @@ import {
 
 import ProfileImg from './ProfileImg'
 
-interface BlogCardProps {
-  imgSrc: string
-  altName: string
-  cardTitle: string
-  cardDescription: string
-  publishedDate: string
-}
-
-export default function BlogCard(props: BlogCardProps){
+export default function BlogCardSquare(props: BlogCardProps){
   return (
     <Card className='w-[320px]'>
       <CardHeader>

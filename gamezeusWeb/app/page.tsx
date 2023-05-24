@@ -1,4 +1,8 @@
-import BlogCard from '@/components/custom/BlogCard'
+import { gameReviews, topStories } from '@/config/site'
+import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
+import BlogCardSquare from '@/components/custom/BlogCard'
+import TabsCustom from '@/components/custom/Tabs'
+import TopStoriesCard from '@/components/custom/TopStoriesCard'
 
 export default function IndexPage() {
   return (
@@ -10,41 +14,40 @@ export default function IndexPage() {
           for Gamers, by Gaymers
         </h1>
         <p className='max-w-[700px] text-lg text-muted-foreground sm:text-xl'>
-          We make the best reviews ever, we have a writer among us, a pulitzer prize winner,
+          We make the best reviews ever, we have a writer among us, a pulitzer
+          prize winner,
           <b> Mr Samam hasan</b> who will review each game carefully and disect
           each and every aspect of the game
         </p>
       </div>
+      <h1 className='text-4xl font-bold tracking-tight'>Today's top stories</h1>
+      <ScrollArea className='h-[330px] w-full rounded-md border p-4'>
+        <div className='flex'>
+          {topStories.map((story) => (
+            <div className='p-2'>
+              <TopStoriesCard
+                imgSrc={story.imgSrc}
+                altName={story.altName}
+                cardTitle={story.cardTitle}
+              />
+            </div>
+          ))}
+        </div>
+        <ScrollBar orientation='horizontal' className='h-3.5' />
+      </ScrollArea>
+      <h1 className='text-4xl font-bold tracking-tight'>Editor's Pick</h1>
       <div className='flex justify-between'>
-        <BlogCard
-          imgSrc='https://www.ggrecon.com/media/dhmmah05/apex-legends-season-16-balance-changes-all-buffs-and-nerfs-3.jpg'
-          altName='apex image'
-          cardTitle='Apex Legends'
-          cardDescription='Checkout our review of season 17'
-          publishedDate='June 19, 2023'
-        />
-        <BlogCard
-          imgSrc='https://www.ggrecon.com/media/dhmmah05/apex-legends-season-16-balance-changes-all-buffs-and-nerfs-3.jpg'
-          altName='apex image'
-          cardTitle='Apex Legends'
-          cardDescription='Checkout our review of season 17'
-          publishedDate='June 19, 2023'
-        />
-        <BlogCard
-          imgSrc='https://www.ggrecon.com/media/dhmmah05/apex-legends-season-16-balance-changes-all-buffs-and-nerfs-3.jpg'
-          altName='apex image'
-          cardTitle='Apex Legends'
-          cardDescription='Checkout our review of season 17'
-          publishedDate='June 19, 2023'
-        />
-        <BlogCard
-          imgSrc='https://www.ggrecon.com/media/dhmmah05/apex-legends-season-16-balance-changes-all-buffs-and-nerfs-3.jpg'
-          altName='apex image'
-          cardTitle='Apex Legends'
-          cardDescription='Checkout our review of season 17'
-          publishedDate='June 19, 2023'
-        />
+        {gameReviews.map((blogs) => (
+          <BlogCardSquare
+            imgSrc={blogs.imgSrc}
+            altName={blogs.altName}
+            cardTitle={blogs.cardTitle}
+            cardDescription={blogs.cardDescription}
+            publishedDate={blogs.publishedDate}
+          />
+        ))}
       </div>
+      <TabsCustom />
     </section>
   )
 }
