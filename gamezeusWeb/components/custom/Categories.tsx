@@ -17,7 +17,6 @@ import {
 
 interface DropdownMenuProps {
   title: string
-  key: number
   items: NavItem[]
 }
 
@@ -43,13 +42,11 @@ export default function DropdownMenuRadioGroupCatagories({
         <DropdownMenuRadioGroup
           value={position}
           onValueChange={setPosition}
-          key={props.key}
         >
           {props.items.map((item, index) => {
             return (
-              <DropdownMenuRadioItem value={item.title}>
+              <DropdownMenuRadioItem value={item.title} key={index}>
                 <Link
-                  key={index}
                   href={item.href as string}
                   className={cn(
                     'flex items-center text-lg font-semibold text-muted-foreground sm:text-sm',

@@ -23,9 +23,10 @@ export default function IndexPage() {
       <h1 className='text-4xl font-bold tracking-tight'>Today's top stories</h1>
       <ScrollArea className='h-[330px] w-full rounded-md border p-4'>
         <div className='flex'>
-          {topStories.map((story) => (
-            <div className='p-2'>
+          {topStories.map((story, index) => (
+            <div className='p-2' key={index} >
               <TopStoriesCard
+                key={index}
                 imgSrc={story.imgSrc}
                 altName={story.altName}
                 cardTitle={story.cardTitle}
@@ -37,8 +38,9 @@ export default function IndexPage() {
       </ScrollArea>
       <h1 className='text-4xl font-bold tracking-tight'>Editor's Pick</h1>
       <div className='flex justify-between'>
-        {gameReviews.map((blogs) => (
+        {gameReviews.map((blogs, index) => (
           <BlogCardSquare
+            key={index}
             imgSrc={blogs.imgSrc}
             altName={blogs.altName}
             cardTitle={blogs.cardTitle}
