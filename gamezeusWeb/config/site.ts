@@ -14,21 +14,19 @@ export const siteConfig = {
       href: '/news',
     },
     {
-      title: 'Catagories',
-      dropdownItems: [
-        {
-          title: 'Apex',
-          href: '/apex',
-        },
-        {
-          title: 'Valorant',
-          href: '/valorant',
-        },
-        {
-          title: 'LOL',
-          href: '/lol',
-        },
-      ],
+      title: 'Apex',
+      category: true,
+      href: '/apex',
+    },
+    {
+      title: 'Valorant',
+      category: true,
+      href: '/valorant',
+    },
+    {
+      title: 'LOL',
+      category: true,
+      href: '/lol',
     },
   ],
   links: {

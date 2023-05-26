@@ -21,10 +21,10 @@ export default function IndexPage() {
         </p>
       </div>
       <h1 className='text-4xl font-bold tracking-tight'>Today's top stories</h1>
-      <ScrollArea className='h-[330px] w-full rounded-md border p-4'>
+      <ScrollArea className='h-[330px] w-full sm:rounded-md sm:border sm:p-4'>
         <div className='flex'>
           {topStories.map((story, index) => (
-            <div className='p-2' key={index} >
+            <div className='p-2' key={index}>
               <TopStoriesCard
                 key={index}
                 imgSrc={story.imgSrc}
@@ -37,7 +37,7 @@ export default function IndexPage() {
         <ScrollBar orientation='horizontal' className='h-3.5' />
       </ScrollArea>
       <h1 className='text-4xl font-bold tracking-tight'>Editor's Pick</h1>
-      <div className='flex justify-between'>
+      <div className='flex flex-col space-y-4 sm:flex-row sm:space-y-0 justify-between'>
         {gameReviews.map((blogs, index) => (
           <BlogCardSquare
             key={index}
