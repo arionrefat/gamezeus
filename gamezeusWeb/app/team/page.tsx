@@ -15,7 +15,7 @@ export const metadata = {
   title: 'Blog',
 }
 
-export default async function AuthorPage() {
+export default async function TeamPage() {
   return (
     <div className='container max-w-4xl sm:max-w-min py-6 lg:py-10'>
         <h1 className='text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl pb-4'>
