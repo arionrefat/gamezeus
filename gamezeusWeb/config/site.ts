@@ -14,6 +14,10 @@ export const siteConfig = {
       href: '/news',
     },
     {
+      title: 'Team',
+      href: '/team',
+    },
+    {
       title: 'Apex',
       category: true,
       href: '/apex',

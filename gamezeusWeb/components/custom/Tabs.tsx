@@ -7,7 +7,9 @@ export default function TabsCustom() {
     <Tabs defaultValue='latest' className='w-full'>
       <TabsList className='grid w-full grid-cols-6'>
         {BlogCatagories.map((catagories, index) => (
-          <TabsTrigger key={index} value={catagories}>{catagories}</TabsTrigger>
+          <TabsTrigger key={index} value={catagories}>
+            {catagories}
+          </TabsTrigger>
         ))}
       </TabsList>
       <TabsContent value='latest' className='pt-3'>
