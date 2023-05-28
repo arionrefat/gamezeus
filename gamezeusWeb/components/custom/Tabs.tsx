@@ -4,7 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import BlogCardSquare from '@/components/custom/BlogCard'
 import BlogCardRectangle from '@/components/custom/BlogCardRec'
 
-export default function TabsCustom() {
+export default function CatagoriesTabs() {
   return (
     <Tabs defaultValue='latest' className='w-full'>
       <TabsList className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 w-full'>
@@ -24,6 +24,7 @@ export default function TabsCustom() {
               <div className='hidden sm:grid'>
                 <BlogCardRectangle
                   imgSrc={blogs.imgSrc}
+                  author={blogs.author}
                   altName={blogs.altName}
                   cardTitle={blogs.cardTitle}
                   cardDescription={blogs.cardDescription}

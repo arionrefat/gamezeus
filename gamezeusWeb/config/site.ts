@@ -34,9 +34,8 @@ export const siteConfig = {
     },
   ],
   links: {
-    twitter: 'https://twitter.com/shadcn',
-    github: 'https://github.com/shadcn/ui',
-    docs: 'https://ui.shadcn.com',
+    twitter: 'https://twitter.com/refatul_arion',
+    github: 'https://github.com/arionrefat',
   },
 }
 
@@ -78,6 +77,7 @@ export const gameReviews = [
     imgSrc:
       'https://www.ggrecon.com/media/dhmmah05/apex-legends-season-16-balance-changes-all-buffs-and-nerfs-3.jpg',
     altName: 'apex image',
+    author: 'Samam Hasan',
     cardTitle:
       'PlayStation VR2 Has Strong Launch Despite Reports, Outselling Original PSVR',
     cardDescription:
@@ -89,6 +89,7 @@ export const gameReviews = [
       'https://www.ggrecon.com/media/dhmmah05/apex-legends-season-16-balance-changes-all-buffs-and-nerfs-3.jpg',
     altName: 'apex image',
     cardTitle: 'Apex Legends',
+    author: 'Samam Hasan',
     cardDescription: 'Checkout our review of season 17',
     publishedDate: 'June 19, 2023',
   },
@@ -97,6 +98,7 @@ export const gameReviews = [
       'https://www.ggrecon.com/media/dhmmah05/apex-legends-season-16-balance-changes-all-buffs-and-nerfs-3.jpg',
     altName: 'apex image',
     cardTitle: 'Apex Legends',
+    author: 'Samam Hasan',
     cardDescription: 'Checkout our review of season 17',
     publishedDate: 'June 19, 2023',
   },
@@ -105,6 +107,7 @@ export const gameReviews = [
       'https://www.ggrecon.com/media/dhmmah05/apex-legends-season-16-balance-changes-all-buffs-and-nerfs-3.jpg',
     altName: 'apex image',
     cardTitle: 'Apex Legends',
+    author: 'Samam Hasan',
     cardDescription: 'Checkout our review of season 17',
     publishedDate: 'June 19, 2023',
   },
