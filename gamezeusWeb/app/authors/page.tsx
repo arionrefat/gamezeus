@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { AuthorsDescription } from '@/config/team'
 import {
   Card,
@@ -23,21 +24,23 @@ export default async function AuthorsPage() {
       <div className='flex items-start gap-4 md:flex-row md:justify-between md:gap-8 pt-4'>
         <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4'>
           {AuthorsDescription.map((author, index) => (
-            <Card className='w-[326px] flex' key={index}>
-              <CardHeader>
-                <ProfileImg
-                  imgSrc={author.imgSrc}
-                  altName={author.altName}
-                  className='h-11 w-11'
-                />
-              </CardHeader>
-              <CardFooter className='pt-6'>
-                <div>
-                  <CardTitle>{author.altName}</CardTitle>
-                  <CardDescription>{author.designation}</CardDescription>
-                </div>
-              </CardFooter>
-            </Card>
+            <Link href={`/authors/${author.path}`} key={index}>
+              <Card className='w-[326px] flex'>
+                <CardHeader>
+                  <ProfileImg
+                    imgSrc={author.imgSrc}
+                    altName={author.altName}
+                    className='h-11 w-11'
+                  />
+                </CardHeader>
+                <CardFooter className='pt-6'>
+                  <div>
+                    <CardTitle>{author.altName}</CardTitle>
+                    <CardDescription>{author.designation}</CardDescription>
+                  </div>
+                </CardFooter>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>
