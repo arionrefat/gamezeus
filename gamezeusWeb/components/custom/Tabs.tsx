@@ -1,50 +1,76 @@
 import { BlogCatagories } from '@/types/blogs'
+import { gameReviews } from '@/config/site'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import BlogCardSquare from '@/components/custom/BlogCard'
 import BlogCardRectangle from '@/components/custom/BlogCardRec'
 
 export default function TabsCustom() {
   return (
     <Tabs defaultValue='latest' className='w-full'>
-      <TabsList className='grid w-full grid-cols-6'>
+      <TabsList className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 w-full'>
         {BlogCatagories.map((catagories, index) => (
           <TabsTrigger key={index} value={catagories}>
             {catagories}
           </TabsTrigger>
         ))}
       </TabsList>
-      <TabsContent value='latest' className='pt-3'>
-        <div className='grid w-full grid-cols-2 justify-items-center gap-x-4 gap-y-4'>
-          <BlogCardRectangle
-            imgSrc='https://www.ggrecon.com/media/dhmmah05/apex-legends-season-16-balance-changes-all-buffs-and-nerfs-3.jpg'
-            altName='apex image'
-            cardTitle='PlayStation VR2 Has Strong Launch Despite Reports, Outselling Original PSVR'
-            cardDescription="Get Link's iconic shield once again in Tears of the Kingdom in a brand new hiding place."
-            author='Samam Hasan'
-          />
-          <BlogCardRectangle
-            imgSrc='https://www.ggrecon.com/media/dhmmah05/apex-legends-season-16-balance-changes-all-buffs-and-nerfs-3.jpg'
-            altName='apex image'
-            cardTitle='PlayStation VR2 Has Strong Launch Despite Reports, Outselling Original PSVR'
-            cardDescription="Get Link's iconic shield once again in Tears of the Kingdom in a brand new hiding place."
-            author='Samam Hasan'
-          />
-          <BlogCardRectangle
-            imgSrc='https://www.ggrecon.com/media/dhmmah05/apex-legends-season-16-balance-changes-all-buffs-and-nerfs-3.jpg'
-            altName='apex image'
-            cardTitle='PlayStation VR2 Has Strong Launch Despite Reports, Outselling Original PSVR'
-            cardDescription="Get Link's iconic shield once again in Tears of the Kingdom in a brand new hiding place."
-            author='Samam Hasan'
-          />
+      <TabsContent
+        value='latest'
+        className='pt-16 sm:pt-7 md:pt-5 lg:pt-4 xl:pt-3 space-y-9'
+      >
+        <div className='grid w-full grid-cols-1 sm:grid-cols-2 justify-items-center gap-4'>
+          {gameReviews.map((blogs, index) => (
+            <div key={index}>
+              <div className='hidden sm:grid'>
+                <BlogCardRectangle
+                  imgSrc={blogs.imgSrc}
+                  altName={blogs.altName}
+                  cardTitle={blogs.cardTitle}
+                  cardDescription={blogs.cardDescription}
+                  publishedDate={blogs.publishedDate}
+                />
+              </div>
+              <div className='sm:hidden flex flex-col space-y-4 justify-between'>
+                <BlogCardSquare
+                  imgSrc={blogs.imgSrc}
+                  altName={blogs.altName}
+                  cardTitle={blogs.cardTitle}
+                  cardDescription={blogs.cardDescription}
+                  publishedDate={blogs.publishedDate}
+                />
+              </div>
+            </div>
+          ))}
         </div>
       </TabsContent>
-      <TabsContent value='Videos'>
-        <BlogCardRectangle
-          imgSrc='https://www.ggrecon.com/media/dhmmah05/apex-legends-season-16-balance-changes-all-buffs-and-nerfs-3.jpg'
-          altName='apex image'
-          cardTitle='Apex Legends'
-          cardDescription='Checkout our review of season 17'
-          author='Samam Hasan'
-        />
+      <TabsContent
+        value='Videos'
+        className='pt-16 sm:pt-7 md:pt-5 lg:pt-4 xl:pt-3 space-y-9'
+      >
+        <div className='grid w-full grid-cols-1 sm:grid-cols-2 justify-items-center gap-4'>
+          {gameReviews.map((blogs, index) => (
+            <div key={index}>
+              <div className='hidden sm:grid'>
+                <BlogCardRectangle
+                  imgSrc={blogs.imgSrc}
+                  altName={blogs.altName}
+                  cardTitle={blogs.cardTitle}
+                  cardDescription={blogs.cardDescription}
+                  publishedDate={blogs.publishedDate}
+                />
+              </div>
+              <div className='sm:hidden flex flex-col space-y-4 justify-between'>
+                <BlogCardSquare
+                  imgSrc={blogs.imgSrc}
+                  altName={blogs.altName}
+                  cardTitle={blogs.cardTitle}
+                  cardDescription={blogs.cardDescription}
+                  publishedDate={blogs.publishedDate}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
       </TabsContent>
     </Tabs>
   )

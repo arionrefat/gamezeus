@@ -22,8 +22,8 @@ export default async function AuthorsPage() {
       <Separator className='pb-1' />
       <div className='flex items-start gap-4 md:flex-row md:justify-between md:gap-8 pt-4'>
         <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4'>
-          {AuthorsDescription.map((author) => (
-            <Card className='w-[326px] flex'>
+          {AuthorsDescription.map((author, index) => (
+            <Card className='w-[326px] flex' key={index}>
               <CardHeader>
                 <ProfileImg
                   imgSrc={author.imgSrc}

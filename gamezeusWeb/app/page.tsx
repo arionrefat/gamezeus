@@ -49,6 +49,9 @@ export default function IndexPage() {
           />
         ))}
       </div>
+      <h1 className='text-4xl font-bold tracking-tight pt-4'>
+        Catagories
+      </h1>
       <TabsCustom />
     </section>
   )

@@ -78,8 +78,10 @@ export const gameReviews = [
     imgSrc:
       'https://www.ggrecon.com/media/dhmmah05/apex-legends-season-16-balance-changes-all-buffs-and-nerfs-3.jpg',
     altName: 'apex image',
-    cardTitle: 'Apex Legends',
-    cardDescription: 'Checkout our review of season 17',
+    cardTitle:
+      'PlayStation VR2 Has Strong Launch Despite Reports, Outselling Original PSVR',
+    cardDescription:
+      "Get Link's iconic shield once again in Tears of the Kingdom in a brand new hiding place.",
     publishedDate: 'June 19, 2023',
   },
   {

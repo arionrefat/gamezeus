@@ -24,8 +24,8 @@ export default async function TeamPage() {
       <Separator className='pb-1'/>
       <div className='flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8 pt-4'>
         <div className='flex flex-col space-y-4 xl:flex-row xl:space-x-4 xl:space-y-0'>
-          {TeamDescription.map((author) => (
-            <Card className='md:w-96 w-full'>
+          {TeamDescription.map((author, index) => (
+            <Card className='md:w-96 w-full' key={index} >
               <CardHeader>
                 <Image
                   src={author.imgSrc}
