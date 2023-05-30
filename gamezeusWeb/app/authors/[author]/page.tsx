@@ -12,13 +12,11 @@ import ProfileImg from '@/components/custom/ProfileImg'
 
 interface AuthorsPageProps {
   params: {
-    name: string
+    author: string
   }
 }
 
 export default async function AuthorsPage({ params }: AuthorsPageProps) {
-  console.log(params.name)
-
   return (
     <div className='container py-2'>
       <div className='flex items-center md:flex-row md:justify-between'>
@@ -32,7 +30,7 @@ export default async function AuthorsPage({ params }: AuthorsPageProps) {
           </CardHeader>
           <CardFooter className='pt-6'>
             <div>
-              <CardTitle className='pb-2'>{params.name}</CardTitle>
+              <CardTitle className='pb-2'>{params.author}</CardTitle>
               <CardDescription>
                 Samam Hasan is a renowned game journalist known for his profound
                 insights and Pulitzer Prize-winning storytelling. His

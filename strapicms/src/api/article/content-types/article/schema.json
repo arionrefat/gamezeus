@@ -4,15 +4,19 @@
   "info": {
     "singularName": "article",
     "pluralName": "articles",
-    "displayName": "Articles"
+    "displayName": "Article"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "gameArticles": {
+    "blog": {
       "type": "richtext"
+    },
+    "uniqueId": {
+      "type": "customField",
+      "customField": "plugin::field-uuid.uuid"
     }
   }
 }
