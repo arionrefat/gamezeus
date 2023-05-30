@@ -11,7 +11,7 @@ import { Separator } from '@/components/ui/separator'
 import ProfileImg from '@/components/custom/ProfileImg'
 
 export const metadata = {
-  title: 'Blog',
+  title: 'All the authors',
 }
 
 export default async function AuthorsPage() {

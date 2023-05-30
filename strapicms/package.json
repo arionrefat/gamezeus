@@ -1,5 +1,5 @@
 {
-  "name": "strapicms",
+  "name": "my-project",
   "private": true,
   "version": "0.1.0",
   "description": "A Strapi application",
@@ -11,16 +11,16 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@strapi/strapi": "4.10.5",
-    "@strapi/plugin-users-permissions": "4.10.5",
-    "@strapi/plugin-i18n": "4.10.5",
+    "@strapi/strapi": "4.10.6",
+    "@strapi/plugin-users-permissions": "4.10.6",
+    "@strapi/plugin-i18n": "4.10.6",
     "better-sqlite3": "8.0.1"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "3e81d81a-cdbf-4cec-8044-21ecf3cd25fe"
+    "uuid": "100481db-337c-4e88-b36c-483d9fca61f2"
   },
   "engines": {
     "node": ">=14.19.1 <=18.x.x",
