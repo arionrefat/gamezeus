@@ -1,23 +1,19 @@
-# next-template
+# GameZeus Web
 
-A Next.js 13 template for building apps with Radix UI and Tailwind CSS.
+A Next.js 13 gaming article website
 
 ## Usage
 
-```bash
-npx create-next-app -e https://github.com/shadcn/next-template
-```
+ - To run the server
+  ```bash
+  npm run dev
+  ```
 
-## Features
+## Todo
 
-- Radix UI Primitives
-- Tailwind CSS
-- Fonts with `next/font`
-- Icons from [Lucide](https://lucide.dev)
-- Dark mode with `next-themes`
-- Automatic import sorting with `@ianvs/prettier-plugin-sort-imports`
-- Tailwind CSS class sorting, merging and linting.
+[x] Show article via MDX?
+[x] show catagory tabs in responsive mode
 
-## License
+## Templete from
+[https://github.com/shadcn/next-template](shadcn)
 
-Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.md).
