@@ -8,7 +8,7 @@ export interface BlogCardProps {
 }
 
 export const BlogCatagories = [
-  'latest',
+  'Latest',
   'Videos',
   'Games',
   'Movies',
