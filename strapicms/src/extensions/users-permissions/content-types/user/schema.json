@@ -65,15 +65,32 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "uuid": {
-      "type": "customField",
-      "customField": "plugin::field-uuid.uuid"
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     },
-    "avatar": {
+    "avatarlink": {
       "type": "string"
     },
-    "designation": {
+    "fullname": {
       "type": "string"
+    },
+    "bio": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article",
+      "mappedBy": "author"
     }
   }
 }

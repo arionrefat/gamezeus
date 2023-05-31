@@ -4,19 +4,39 @@
   "info": {
     "singularName": "article",
     "pluralName": "articles",
-    "displayName": "Article"
+    "displayName": "Article",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "blog": {
+    "content": {
       "type": "richtext"
     },
-    "uniqueId": {
-      "type": "customField",
-      "customField": "plugin::field-uuid.uuid"
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "articles"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "articlename": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
     }
   }
 }
