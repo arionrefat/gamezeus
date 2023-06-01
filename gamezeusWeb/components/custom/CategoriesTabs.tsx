@@ -3,10 +3,10 @@ import { gameReviews } from '@/config/site'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import BlogCardRectangle from '@/components/custom/BlogCardRec'
 
-export default function CatagoriesTabs() {
+export default function CategoriesTabs() {
   return (
-    <Tabs defaultValue='Latest' className='hidden w-full sm:block'>
-      <TabsList className='grid w-full grid-cols-6'>
+    <Tabs defaultValue='Latest' className='w-full'>
+      <TabsList className='grid w-full sm:grid-cols-6 grid-cols-2'>
         {BlogCatagories.map((catagories, index) => (
           <TabsTrigger key={index} value={catagories}>
             {catagories}

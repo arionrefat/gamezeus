@@ -2,7 +2,7 @@ import { gameReviews, topStories } from '@/config/site'
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
 import BlogCardSquare from '@/components/custom/BlogCard'
 import FeaturedCards from '@/components/custom/FeaturedCards'
-import CatagoriesTabs from '@/components/custom/Tabs'
+import CategoriesTabs from '@/components/custom/CategoriesTabs'
 import TopStoriesCard from '@/components/custom/TopStoriesCard'
 
 export default function IndexPage() {
@@ -24,7 +24,7 @@ export default function IndexPage() {
 
       <FeaturedCards />
 
-      <h1 className='pt-2 text-4xl font-bold tracking-tight'>
+      <h1 className='pt-2 text-4xl font-bold tracking-tight text-center sm:text-start'>
         Today&apos;s top stories
       </h1>
       <ScrollArea className='h-[330px] w-full sm:rounded-md sm:border sm:p-4'>
@@ -43,7 +43,7 @@ export default function IndexPage() {
         <ScrollBar orientation='horizontal' className='h-3.5' />
       </ScrollArea>
 
-      <h1 className='text-4xl font-bold tracking-tight'>Editor&apos;s Pick</h1>
+      <h1 className='text-4xl font-bold tracking-tight text-center sm:text-start'>Editor&apos;s Pick</h1>
       <div className='grid sm:grid-cols-4 grid-cols-1 justify-between gap-y-4'>
         {gameReviews.map((blogs, index) => (
           <BlogCardSquare
@@ -57,8 +57,8 @@ export default function IndexPage() {
         ))}
       </div>
 
-      <h1 className='pt-4 text-4xl font-bold tracking-tight'>Catagories</h1>
-      <CatagoriesTabs />
+      <h1 className='pt-4 text-4xl font-bold tracking-tight text-center sm:text-start'>Catagories</h1>
+      <CategoriesTabs />
     </section>
   )
 }

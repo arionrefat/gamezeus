@@ -14,7 +14,7 @@ import ProfileImg from './ProfileImg'
 
 export default function BlogCardRectangle(props: BlogCardProps) {
   return (
-    <Card className='flex h-[160px] w-[658px]'>
+    <Card className='flex h-auto w-full sm:h-[160px] sm:w-[658px]'>
       <CardHeader className='flex-none basis-2/5'>
         <Image src={props.imgSrc} alt={props.altName} height={90} width={200} />
       </CardHeader>
