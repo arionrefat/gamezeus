@@ -6,7 +6,7 @@ import BlogCardRectangle from '@/components/custom/BlogCardRec'
 export default function CategoriesTabs() {
   return (
     <Tabs defaultValue='Latest' className='w-full'>
-      <TabsList className='grid w-full sm:grid-cols-6 grid-cols-2'>
+      <TabsList className='grid w-full grid-cols-2 sm:grid-cols-6'>
         {BlogCatagories.map((catagories, index) => (
           <TabsTrigger key={index} value={catagories}>
             {catagories}
