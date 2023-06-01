@@ -24,8 +24,8 @@ export default function IndexPage() {
 
       <FeaturedCards />
 
-      <h1 className='text-4xl font-bold tracking-tight pt-2'>
-        Today's top stories
+      <h1 className='pt-2 text-4xl font-bold tracking-tight'>
+        Today&apos;s top stories
       </h1>
       <ScrollArea className='h-[330px] w-full sm:rounded-md sm:border sm:p-4'>
         <div className='flex'>
@@ -43,8 +43,8 @@ export default function IndexPage() {
         <ScrollBar orientation='horizontal' className='h-3.5' />
       </ScrollArea>
 
-      <h1 className='text-4xl font-bold tracking-tight'>Editor's Pick</h1>
-      <div className='flex flex-col space-y-4 sm:flex-row sm:space-y-0 justify-between'>
+      <h1 className='text-4xl font-bold tracking-tight'>Editor&apos;s Pick</h1>
+      <div className='flex flex-col justify-between space-y-4 sm:flex-row sm:space-y-0'>
         {gameReviews.map((blogs, index) => (
           <BlogCardSquare
             key={index}
@@ -57,7 +57,7 @@ export default function IndexPage() {
         ))}
       </div>
 
-      <h1 className='text-4xl font-bold tracking-tight pt-4'>Catagories</h1>
+      <h1 className='pt-4 text-4xl font-bold tracking-tight'>Catagories</h1>
       <CatagoriesTabs />
     </section>
   )

@@ -17,15 +17,15 @@ export const metadata = {
 
 export default async function TeamPage() {
   return (
-    <div className='container max-w-4xl sm:max-w-min py-6 lg:py-10'>
-        <h1 className='text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl pb-4'>
+    <div className='container max-w-4xl py-6 sm:max-w-min lg:py-10'>
+        <h1 className='pb-4 text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl'>
           Meet the Team
         </h1>
       <Separator className='pb-1'/>
-      <div className='flex flex-col items-start gap-4 md:flex-row md:justify-between md:gap-8 pt-4'>
+      <div className='flex flex-col items-start gap-4 pt-4 md:flex-row md:justify-between md:gap-8'>
         <div className='flex flex-col space-y-4 xl:flex-row xl:space-x-4 xl:space-y-0'>
           {TeamDescription.map((author, index) => (
-            <Card className='md:w-96 w-full' key={index} >
+            <Card className='w-full md:w-96' key={index} >
               <CardHeader>
                 <Image
                   src={author.imgSrc}

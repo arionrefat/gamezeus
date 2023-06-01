@@ -1,27 +1,25 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 
 import { Features } from '@/config/site'
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
 
+const MediaQuery = dynamic(() => import('react-responsive'), {
+  ssr: true,
+})
+
 export default function FeaturedCards() {
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    setIsMobile(window.innerWidth < 400)
-  }, [])
-
-return (
+  return (
     <div>
-      {!isMobile ? (
+      <MediaQuery minWidth={400}>
         <div className='flex p-6 justify-between'>
           {Features.map((feature, index) => (
             <div className='relative' key={index}>
               <div>
                 <Image
-                  className='hover:scale-105 ease-in-out duration-200'
+                  className='hover:scale-105 ease-in duration-200'
                   src={feature.imgSrc}
                   alt={feature.altName}
                   height={470}
@@ -34,14 +32,14 @@ return (
             </div>
           ))}
         </div>
-      ) : (
+      </MediaQuery>
+      <MediaQuery maxWidth={450}>
         <ScrollArea className='h-[470px] rounded-md border sm:p-4'>
           <div className='p-6 justify-between'>
             {Features.map((feature, index) => (
               <div className='relative' key={index}>
                 <div>
                   <Image
-                    className='hover:scale-105 ease-in-out duration-200'
                     src={feature.imgSrc}
                     alt={feature.altName}
                     height={470}
@@ -56,7 +54,7 @@ return (
           </div>
           <ScrollBar orientation='horizontal' className='h-3.5' />
         </ScrollArea>
-      )}
+      </MediaQuery>
     </div>
   )
 }

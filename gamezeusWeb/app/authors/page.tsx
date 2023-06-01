@@ -19,16 +19,16 @@ export default async function AuthorsPage() {
   const users:UserType[] = await fetchUsers('http://127.0.0.1:1337/api/users')
 
   return (
-    <div className='container max-w-4xl sm:max-w-max py-6 lg:py-10'>
-      <h1 className='text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl pb-4'>
+    <div className='container max-w-4xl py-6 sm:max-w-max lg:py-10'>
+      <h1 className='pb-4 text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl'>
         Meet Our Authors
       </h1>
       <Separator className='pb-1' />
-      <div className='flex items-start gap-4 md:flex-row md:justify-between md:gap-8 pt-4'>
-        <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4'>
+      <div className='flex items-start gap-4 pt-4 md:flex-row md:justify-between md:gap-8'>
+        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4'>
           {users ? users.map((author, index) => (
             <Link href={`/authors/${author.uuid}`} key={index}>
-              <Card className='w-[326px] flex'>
+              <Card className='flex w-[326px]'>
                 <CardHeader>
                   <ProfileImg
                     imgSrc={author.avatar}

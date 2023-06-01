@@ -32,7 +32,7 @@ export default function DropdownMenuRadioGroupCatagories({
       <DropdownMenuTrigger asChild>
         <Button
           variant='outline'
-          className='border-none text-muted-foreground px-0'
+          className='border-none px-0 text-muted-foreground'
         >
           {props.title}
         </Button>

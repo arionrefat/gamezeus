@@ -14,12 +14,12 @@ import ProfileImg from './ProfileImg'
 
 export default function BlogCardRectangle(props: BlogCardProps) {
   return (
-    <Card className='h-[160px] w-[658px] flex'>
+    <Card className='flex h-[160px] w-[658px]'>
       <CardHeader className='flex-none basis-2/5'>
         <Image src={props.imgSrc} alt={props.altName} height={90} width={200} />
       </CardHeader>
       <div className='py-6'>
-        <CardContent className='p-0 flex flex-col justify-center'>
+        <CardContent className='flex flex-col justify-center p-0'>
           <CardTitle>{props.cardTitle}</CardTitle>
           <CardDescription className='pt-1'>{props.cardDescription}</CardDescription>
           <div className='flex items-center space-x-1 pt-3'>

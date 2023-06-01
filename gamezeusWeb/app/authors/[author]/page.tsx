@@ -39,18 +39,18 @@ export default async function AuthorsPage({ params }: AuthorsPageProps) {
             </div>
           </CardFooter>
         </Card>
-        <h1 className='hidden sm:block font-extrabold leading-tight tracking-tighter sm:text-4xl'>
+        <h1 className='hidden font-extrabold leading-tight tracking-tighter sm:block sm:text-4xl'>
           300 Articles
         </h1>
       </div>
 
-      <h1 className='sm:hidden xs:block font-extrabold leading-tight tracking-tighter text-2xl text-center pb-2'>
+      <h1 className='xs:block pb-2 text-center text-2xl font-extrabold leading-tight tracking-tighter sm:hidden'>
         300 Articles
       </h1>
 
       <Separator className='py-1' />
 
-      <div className='flex flex-col space-y-4 sm:flex-row sm:space-y-0 justify-between pt-4'>
+      <div className='flex flex-col justify-between space-y-4 pt-4 sm:flex-row sm:space-y-0'>
         {gameReviews.map((blogs, index) => (
           <BlogCardSquare
             key={index}

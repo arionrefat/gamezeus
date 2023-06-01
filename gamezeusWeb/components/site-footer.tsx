@@ -22,34 +22,34 @@ export function SiteFooter() {
             {' '}© 2023
           </p>
         </div>
-        <div className='flex flex-col sm:flex-row space-y-4 sm:space-y-0 space-x-0 sm:space-x-4 text-muted-foreground md:text-left'>
+        <div className='flex flex-col space-x-0 space-y-4 text-muted-foreground sm:flex-row sm:space-x-4 sm:space-y-0 md:text-left'>
           <Link
             href='/privacy'
-            className='font-medium hover:underline underline-offset-4'
+            className='font-medium underline-offset-4 hover:underline'
           >
             Privacy
           </Link>
           <Link
             href='/authors'
-            className='font-medium hover:underline underline-offset-4'
+            className='font-medium underline-offset-4 hover:underline'
           >
             Authors
           </Link>
           <Link
             href='/tos'
-            className='font-medium hover:underline underline-offset-4'
+            className='font-medium underline-offset-4 hover:underline'
           >
             Terms
           </Link>
           <Link
             href='/contact'
-            className='font-medium hover:underline underline-offset-4'
+            className='font-medium underline-offset-4 hover:underline'
           >
             Contact
           </Link>
           <Link
             href='/about'
-            className='font-medium hover:underline underline-offset-4'
+            className='font-medium underline-offset-4 hover:underline'
           >
             About
           </Link>
