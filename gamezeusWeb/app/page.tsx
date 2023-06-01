@@ -1,8 +1,9 @@
 import { gameReviews, topStories } from '@/config/site'
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
+import { Skeleton } from '@/components/ui/skeleton'
 import BlogCardSquare from '@/components/custom/BlogCard'
-import TopStoriesCard from '@/components/custom/TopStoriesCard'
 import CatagoriesTabs from '@/components/custom/Tabs'
+import TopStoriesCard from '@/components/custom/TopStoriesCard'
 
 export default function IndexPage() {
   return (
@@ -49,9 +50,7 @@ export default function IndexPage() {
           />
         ))}
       </div>
-      <h1 className='text-4xl font-bold tracking-tight pt-4'>
-        Catagories
-      </h1>
+      <h1 className='text-4xl font-bold tracking-tight pt-4'>Catagories</h1>
       <CatagoriesTabs />
     </section>
   )
