@@ -112,3 +112,30 @@ export const gameReviews = [
     publishedDate: 'June 19, 2023',
   },
 ]
+
+export const Features = [
+  {
+    imgSrc:
+      'https://assets1.ignimgs.com/2023/05/31/diablo4-review-deck-330000-1685541661130.jpg',
+    altName: 'diablo',
+    title: 'Killers of the Flower Moon Review',
+  },
+  {
+    imgSrc:
+      'https://assets1.ignimgs.com/2023/05/31/diablo4-review-deck-330000-1685541661130.jpg',
+    altName: 'diablo',
+    title: 'Killers of the Flower Moon Review',
+  },
+  {
+    imgSrc:
+      'https://assets1.ignimgs.com/2023/05/30/streetfighter6-deck-1685462584255.jpg',
+    altName: 'diablo',
+    title: 'Killers of the Flower Moon Review',
+  },
+  {
+    imgSrc:
+      'https://assets1.ignimgs.com/2023/05/31/diablo4-review-deck-330000-1685541661130.jpg',
+    altName: 'diablo',
+    title: 'Killers of the Flower Moon Review',
+  },
+]

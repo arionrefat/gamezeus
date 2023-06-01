@@ -1,7 +1,7 @@
 import { gameReviews, topStories } from '@/config/site'
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
-import { Skeleton } from '@/components/ui/skeleton'
 import BlogCardSquare from '@/components/custom/BlogCard'
+import FeaturedCards from '@/components/custom/FeaturedCards'
 import CatagoriesTabs from '@/components/custom/Tabs'
 import TopStoriesCard from '@/components/custom/TopStoriesCard'
 
@@ -21,7 +21,12 @@ export default function IndexPage() {
           each and every aspect of the game
         </p>
       </div>
-      <h1 className='text-4xl font-bold tracking-tight'>Today's top stories</h1>
+
+      <FeaturedCards />
+
+      <h1 className='text-4xl font-bold tracking-tight pt-2'>
+        Today's top stories
+      </h1>
       <ScrollArea className='h-[330px] w-full sm:rounded-md sm:border sm:p-4'>
         <div className='flex'>
           {topStories.map((story, index) => (
@@ -37,6 +42,7 @@ export default function IndexPage() {
         </div>
         <ScrollBar orientation='horizontal' className='h-3.5' />
       </ScrollArea>
+
       <h1 className='text-4xl font-bold tracking-tight'>Editor's Pick</h1>
       <div className='flex flex-col space-y-4 sm:flex-row sm:space-y-0 justify-between'>
         {gameReviews.map((blogs, index) => (
@@ -50,6 +56,7 @@ export default function IndexPage() {
           />
         ))}
       </div>
+
       <h1 className='text-4xl font-bold tracking-tight pt-4'>Catagories</h1>
       <CatagoriesTabs />
     </section>

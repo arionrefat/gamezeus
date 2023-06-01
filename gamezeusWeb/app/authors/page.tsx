@@ -17,6 +17,7 @@ export const metadata = {
 
 export default async function AuthorsPage() {
   const users:UserType[] = await fetchUsers('http://127.0.0.1:1337/api/users')
+
   return (
     <div className='container max-w-4xl sm:max-w-max py-6 lg:py-10'>
       <h1 className='text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl pb-4'>
@@ -25,7 +26,7 @@ export default async function AuthorsPage() {
       <Separator className='pb-1' />
       <div className='flex items-start gap-4 md:flex-row md:justify-between md:gap-8 pt-4'>
         <div className='grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4'>
-          {users.map((author, index) => (
+          {users ? users.map((author, index) => (
             <Link href={`/authors/${author.uuid}`} key={index}>
               <Card className='w-[326px] flex'>
                 <CardHeader>
@@ -43,7 +44,9 @@ export default async function AuthorsPage() {
                 </CardFooter>
               </Card>
             </Link>
-          ))}
+          )) : (
+          <h1 className='text-3xl'>No Authors</h1>
+          )}
         </div>
       </div>
     </div>
