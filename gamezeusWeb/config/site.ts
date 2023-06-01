@@ -83,11 +83,13 @@ export const gameReviews = [
     cardDescription:
       "Get Link's iconic shield once again in Tears of the Kingdom in a brand new hiding place.",
     publishedDate: 'June 19, 2023',
+    tabValue: 'Latest',
   },
   {
     imgSrc:
       'https://www.ggrecon.com/media/dhmmah05/apex-legends-season-16-balance-changes-all-buffs-and-nerfs-3.jpg',
     altName: 'apex image',
+    tabValue: 'Videos',
     cardTitle: 'Apex Legends',
     author: 'Samam Hasan',
     cardDescription: 'Checkout our review of season 17',
@@ -99,6 +101,7 @@ export const gameReviews = [
     altName: 'apex image',
     cardTitle: 'Apex Legends',
     author: 'Samam Hasan',
+    tabValue: 'Videos',
     cardDescription: 'Checkout our review of season 17',
     publishedDate: 'June 19, 2023',
   },
@@ -110,6 +113,7 @@ export const gameReviews = [
     author: 'Samam Hasan',
     cardDescription: 'Checkout our review of season 17',
     publishedDate: 'June 19, 2023',
+    tabValue: 'Videos',
   },
 ]
 
