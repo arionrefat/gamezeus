@@ -44,7 +44,7 @@ export default function IndexPage() {
       </ScrollArea>
 
       <h1 className='text-4xl font-bold tracking-tight'>Editor&apos;s Pick</h1>
-      <div className='flex flex-col justify-between space-y-4 sm:flex-row sm:space-y-0'>
+      <div className='grid sm:grid-cols-4 grid-cols-1 justify-between gap-y-4'>
         {gameReviews.map((blogs, index) => (
           <BlogCardSquare
             key={index}

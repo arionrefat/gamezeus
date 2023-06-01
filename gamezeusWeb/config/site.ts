@@ -81,7 +81,7 @@ export const gameReviews = [
     cardTitle:
       'PlayStation VR2 Has Strong Launch Despite Reports, Outselling Original PSVR',
     cardDescription:
-      "Get Link's iconic shield once again in Tears of the Kingdom in a brand new hiding place.",
+      "Get Link's iconic shield once again in Tears of the Kingdom in a brand new hiding place",
     publishedDate: 'June 19, 2023',
     tabValue: 'Latest',
   },
@@ -99,6 +99,16 @@ export const gameReviews = [
     imgSrc:
       'https://www.ggrecon.com/media/dhmmah05/apex-legends-season-16-balance-changes-all-buffs-and-nerfs-3.jpg',
     altName: 'apex image',
+    tabValue: 'Videos',
+    cardTitle: 'Apex Legends',
+    author: 'Samam Hasan',
+    cardDescription: 'Checkout our review of season 17',
+    publishedDate: 'June 19, 2023',
+  },
+  {
+    imgSrc:
+      'https://www.ggrecon.com/media/dhmmah05/apex-legends-season-16-balance-changes-all-buffs-and-nerfs-3.jpg',
+    altName: 'apex image',
     cardTitle: 'Apex Legends',
     author: 'Samam Hasan',
     tabValue: 'Videos',
@@ -114,6 +124,26 @@ export const gameReviews = [
     cardDescription: 'Checkout our review of season 17',
     publishedDate: 'June 19, 2023',
     tabValue: 'Videos',
+  },
+  {
+    imgSrc:
+      'https://www.ggrecon.com/media/dhmmah05/apex-legends-season-16-balance-changes-all-buffs-and-nerfs-3.jpg',
+    altName: 'apex image',
+    tabValue: 'Videos',
+    cardTitle: 'Apex Legends',
+    author: 'Samam Hasan',
+    cardDescription: 'Checkout our review of season 17',
+    publishedDate: 'June 19, 2023',
+  },
+  {
+    imgSrc:
+      'https://www.ggrecon.com/media/dhmmah05/apex-legends-season-16-balance-changes-all-buffs-and-nerfs-3.jpg',
+    altName: 'apex image',
+    tabValue: 'Videos',
+    cardTitle: 'Apex Legends',
+    author: 'Samam Hasan',
+    cardDescription: 'Checkout our review of season 17',
+    publishedDate: 'June 19, 2023',
   },
 ]
 

@@ -13,43 +13,27 @@ export default function CatagoriesTabs() {
           </TabsTrigger>
         ))}
       </TabsList>
-      <TabsContent
-        value='Latest'
-        className='space-y-9 pt-16 sm:pt-7 md:pt-5 lg:pt-4 xl:pt-3'
-      >
-        <div className='grid w-full grid-cols-1 justify-items-center gap-4 sm:grid-cols-2'>
-          {gameReviews.map((blogs, index) => (
-            <div className='hidden sm:grid' key={index}>
-              <BlogCardRectangle
-                imgSrc={blogs.imgSrc}
-                author={blogs.author}
-                altName={blogs.altName}
-                cardTitle={blogs.cardTitle}
-                cardDescription={blogs.cardDescription}
-                publishedDate={blogs.publishedDate}
-              />
-            </div>
-          ))}
-        </div>
-      </TabsContent>
-      <TabsContent
-        value='Videos'
-        className='space-y-9 pt-16 sm:pt-7 md:pt-5 lg:pt-4 xl:pt-3'
-      >
-        <div className='grid w-full grid-cols-1 justify-items-center gap-4 sm:grid-cols-2'>
-          {gameReviews.map((blogs, index) => (
-            <div key={index}>
-              <BlogCardRectangle
-                imgSrc={blogs.imgSrc}
-                altName={blogs.altName}
-                cardTitle={blogs.cardTitle}
-                cardDescription={blogs.cardDescription}
-                publishedDate={blogs.publishedDate}
-              />
-            </div>
-          ))}
-        </div>
-      </TabsContent>
+      {BlogCatagories.map((catagories, index) => (
+        <TabsContent
+          value={catagories}
+          key={index}
+          className='space-y-9 pt-16 sm:pt-7 md:pt-5 lg:pt-4 xl:pt-3'
+        >
+          <div className='grid w-full grid-cols-1 justify-items-center gap-4 sm:grid-cols-2'>
+            {gameReviews.map((blogs, index) => (
+              <div key={index}>
+                <BlogCardRectangle
+                  imgSrc={blogs.imgSrc}
+                  altName={blogs.altName}
+                  cardTitle={blogs.cardTitle}
+                  cardDescription={blogs.cardDescription}
+                  publishedDate={blogs.publishedDate}
+                />
+              </div>
+            ))}
+          </div>
+        </TabsContent>
+      ))}
     </Tabs>
   )
 }

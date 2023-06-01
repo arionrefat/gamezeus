@@ -14,7 +14,7 @@ import ProfileImg from './ProfileImg'
 
 export default function BlogCardSquare(props: BlogCardProps){
   return (
-    <Card className='w-[320px]'>
+    <Card className='max-w-xs h-[400px]'>
       <CardHeader>
         <Image
           src={props.imgSrc}
