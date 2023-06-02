@@ -8,7 +8,7 @@ export const TeamDescription = [
   },
   {
     imgSrc:
-      'https://scontent.fdac24-1.fna.fbcdn.net/v/t39.30808-6/274982212_3050486268601521_4548861312159558651_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeF1_WnJuFA7KunX-D-8oaK2gC03OTFk_mqALTc5MWT-ahTtAWUShsZ79J0QvZFQ4M5KkPwPPgkIYHZ0jjA_xVs8&_nc_ohc=3SeYJ0LKstwAX8TtTPq&_nc_ht=scontent.fdac24-1.fna&oh=00_AfAK5ZUdiC1wWbMwXXIAMd9UofH7aV4ON62tFvMBE4vnKA&oe=6476A053',
+      'https://pbs.twimg.com/profile_images/1588421280587399168/fOiwMcBk_400x400.jpg',
     altName: 'Sharod hasan',
     designation: 'CEO',
     bio: 'Sharod Rahman is the dynamic CEO of SEX. An alumnus of Dhaka University, he holds a degree in Economics. Leveraging his academic background, Rahman brings strategic oversight and a deep understanding of market forces to his role. His leadership is marked by innovative thinking, meticulous planning, and a commitment to excellence.',

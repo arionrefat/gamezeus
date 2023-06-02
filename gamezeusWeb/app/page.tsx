@@ -43,7 +43,7 @@ export default function IndexPage() {
         <ScrollBar orientation='horizontal' className='h-3.5' />
       </ScrollArea>
 
-      <h1 className='text-center text-4xl font-bold tracking-tight sm:text-start'>Editor&apos;s Pick</h1>
+      <h1 className='text-center text-4xl font-bold tracking-tight sm:text-start'>Editor&apos;s Picks</h1>
       <div className='grid grid-cols-1 justify-between gap-y-4 sm:grid-cols-4'>
         {gameReviews.map((blogs, index) => (
           <BlogCardSquare

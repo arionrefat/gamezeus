@@ -50,7 +50,7 @@ export default async function AuthorsPage({ params }: AuthorsPageProps) {
 
       <Separator className='py-1' />
 
-      <div className='flex flex-col justify-between space-y-4 pt-4 sm:flex-row sm:space-y-0'>
+      <div className='grid grid-cols-1 justify-between gap-y-4 sm:grid-cols-4 pt-4'>
         {gameReviews.map((blogs, index) => (
           <BlogCardSquare
             key={index}
