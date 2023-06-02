@@ -1,3 +1,5 @@
+import Article from 'components/Article.mdx'
+
 import { Card, CardFooter, CardHeader } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import ProfileImg from '@/components/custom/ProfileImg'
@@ -36,8 +38,14 @@ export default async function AuthorsPage() {
           <p className='text-sm text-muted-foreground'>POSTED: JUN 2, 2023</p>
         </CardFooter>
       </Card>
-
       <Separator className='py-1' />
+
+      <article className='prose md:prose-lg lg:prose-xl dark:prose-invert pt-5'>
+        <div>
+          <Article />
+
+        </div>
+      </article>
     </div>
   )
 }
