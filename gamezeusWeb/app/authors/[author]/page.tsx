@@ -1,4 +1,5 @@
 import { gameReviews } from '@/config/site'
+import { fetchAxios } from '@/lib/utils'
 import {
   Card,
   CardDescription,
@@ -14,6 +15,21 @@ interface AuthorsPageProps {
   params: {
     author: string
   }
+}
+
+interface AuthorNames {
+  id: number
+  username: string
+}
+
+export async function generateStaticParams() {
+  const authorIdNames: AuthorNames[] = await fetchAxios(
+    'http://127.0.0.1:1337/api/users?fields=username'
+  )
+
+  const authors = authorIdNames.map((author) => author.username)
+
+  return authors.map((author) => author)
 }
 
 export default async function AuthorsPage({ params }: AuthorsPageProps) {
@@ -50,7 +66,7 @@ export default async function AuthorsPage({ params }: AuthorsPageProps) {
 
       <Separator className='py-1' />
 
-      <div className='grid grid-cols-1 justify-between gap-y-4 sm:grid-cols-4 pt-4'>
+      <div className='grid grid-cols-1 justify-between gap-y-4 pt-4 sm:grid-cols-4'>
         {gameReviews.map((blogs, index) => (
           <BlogCardSquare
             key={index}

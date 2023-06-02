@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export async function fetchUsers(url: string, options?: {}) {
+export async function fetchAxios(url: string, options?: {}) {
   try {
     const { data } = await axios({
       method: 'get',

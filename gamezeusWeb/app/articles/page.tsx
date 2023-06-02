@@ -26,11 +26,11 @@ export default async function AuthorsPage() {
               className='h-5 w-5'
             />
 
-            <h4 className='scroll-m-20 text-sm font-semibold tracking-tight pl-2'>
+            <h4 className='scroll-m-20 pl-2 text-sm font-semibold tracking-tight'>
               Samam Hasan
             </h4>
 
-            <p className='text-sm text-muted-foreground pl-2'>
+            <p className='pl-2 text-sm text-muted-foreground'>
               UPDATED: JUN 2, 2023
             </p>
           </div>
@@ -40,7 +40,7 @@ export default async function AuthorsPage() {
       </Card>
       <Separator className='py-1' />
 
-      <article className='prose md:prose-lg lg:prose-xl dark:prose-invert pt-5'>
+      <article className='prose pt-5 dark:prose-invert md:prose-lg lg:prose-xl'>
         <div>
           <Article />
 

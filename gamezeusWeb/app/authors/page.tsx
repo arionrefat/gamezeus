@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { fetchUsers } from '@/lib/utils'
+import { fetchAxios } from '@/lib/utils'
 import {
   Card,
   CardDescription,
@@ -16,7 +16,7 @@ export const metadata = {
 }
 
 export default async function AuthorsPage() {
-  const users:UserType[] = await fetchUsers('http://127.0.0.1:1337/api/users')
+  const users:UserType[] = await fetchAxios('http://127.0.0.1:1337/api/users')
 
   return (
     <div className='container max-w-4xl py-6 sm:max-w-max lg:py-10'>
