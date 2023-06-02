@@ -1,5 +1,12 @@
 export type SiteConfig = typeof siteConfig
 
+export const photoBanner = {
+  imgSrc: '/titfall2.jpg',
+  altName: 'titanfall 2',
+  height: 450,
+  width: 1366,
+}
+
 export const siteConfig = {
   name: 'GameZeus',
   description:

@@ -1,8 +1,10 @@
-import { gameReviews, topStories } from '@/config/site'
+import Image from 'next/image'
+
+import { gameReviews, photoBanner, topStories } from '@/config/site'
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
 import BlogCardSquare from '@/components/custom/BlogCard'
-import FeaturedCards from '@/components/custom/FeaturedCards'
 import CategoriesTabs from '@/components/custom/CategoriesTabs'
+import FeaturedCards from '@/components/custom/FeaturedCards'
 import TopStoriesCard from '@/components/custom/TopStoriesCard'
 
 export default function IndexPage() {
@@ -20,6 +22,25 @@ export default function IndexPage() {
           <b> Mr Samam hasan</b> who will review each game carefully and disect
           each and every aspect of the game
         </p>
+      </div>
+
+      <div className='relative hidden lg:block'>
+        <Image
+          src={photoBanner.imgSrc}
+          alt={photoBanner.altName}
+          height={photoBanner.height}
+          width={photoBanner.width}
+        />
+
+        <div className='absolute bottom-0 w-full'>
+          <h1 className='text-5xl text-center font-extrabold leading-tight tracking-tighter text-muted-foreground'>
+            Titanfall 2 the greatest game of all time
+          </h1>
+          <p className='text-xl text-muted-foreground text-center'>
+            The legacy that has been forgotten my corpo greed but not forgetten by
+            gamers
+          </p>
+        </div>
       </div>
 
       <FeaturedCards />
@@ -43,7 +64,9 @@ export default function IndexPage() {
         <ScrollBar orientation='horizontal' className='h-3.5' />
       </ScrollArea>
 
-      <h1 className='text-center text-4xl font-bold tracking-tight sm:text-start'>Editor&apos;s Picks</h1>
+      <h1 className='text-center text-4xl font-bold tracking-tight sm:text-start'>
+        Editor&apos;s Picks
+      </h1>
       <div className='grid grid-cols-1 justify-between gap-y-4 sm:grid-cols-4'>
         {gameReviews.map((blogs, index) => (
           <BlogCardSquare
@@ -57,7 +80,9 @@ export default function IndexPage() {
         ))}
       </div>
 
-      <h1 className='pt-4 text-center text-4xl font-bold tracking-tight sm:text-start'>Catagories</h1>
+      <h1 className='pt-4 text-center text-4xl font-bold tracking-tight sm:text-start'>
+        Catagories
+      </h1>
       <CategoriesTabs />
     </section>
   )
