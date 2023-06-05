@@ -1,6 +1,8 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { gameReviews, photoBanner, topStories } from '@/config/site'
+import { buttonVariants } from '@/components/ui/button'
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area'
 import BlogCardSquare from '@/components/custom/BlogCard'
 import CategoriesTabs from '@/components/custom/CategoriesTabs'
@@ -37,8 +39,8 @@ export default function IndexPage() {
             Titanfall 2 the greatest game of all time
           </h1>
           <p className='text-xl text-muted-foreground text-center'>
-            The legacy that has been forgotten my corpo greed but not forgetten by
-            gamers
+            The legacy that has been forgotten my corpo greed but not forgetten
+            by gamers
           </p>
         </div>
       </div>
@@ -84,6 +86,14 @@ export default function IndexPage() {
         Catagories
       </h1>
       <CategoriesTabs />
+      <div className='flex justify-center'>
+        <Link
+          href='articles'
+          className={buttonVariants({ variant: 'outline' })}
+        >
+          Go to articles
+        </Link>
+      </div>
     </section>
   )
 }
