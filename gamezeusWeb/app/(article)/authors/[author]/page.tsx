@@ -1,5 +1,4 @@
 import { gameReviews } from '@/config/site'
-import { fetchAxios } from '@/lib/utils'
 import {
   Card,
   CardDescription,
@@ -23,9 +22,14 @@ interface AuthorNames {
 }
 
 export async function generateStaticParams() {
-  const authorIdNames: AuthorNames[] = await fetchAxios(
-    'http://127.0.0.1:1337/api/users?fields=username'
+  const response = await fetch(
+    'http://127.0.0.1:1337/api/users?fields=username',
+    {
+      cache: 'no-store',
+    }
   )
+
+  const authorIdNames: AuthorNames[] = await response.json()
 
   const authors = authorIdNames.map((author) => author.username)
 
