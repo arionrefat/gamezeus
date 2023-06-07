@@ -22,26 +22,27 @@
   - [Conclusion](#conclusion)
 
 ## What will we learn
+
 Here, we will learn to implement authentication using Twitter OAuth 2.0 on a minimal working full-stack web application. We will not be using Passport.js or similar libraries to handle authentication for us. As a result, we will understand the OAuth 2.0 flow better. We will also learn about the following stacks:
+
 - [express.js](https://expressjs.com/) backend framework
 - [prisma](https://www.prisma.io/) to create and login users, you can really use anything to communicate with any database.
 - [next.js](https://nextjs.org/), a [React.js](https://reactjs.org/) framework, for the frontend
 - [typescript](https://www.typescriptlang.org/) (optional) type-safety for javascript
 
 ## Requirements
+
 Anyone with a basic knowledge of javascript can follow along with this blog.
 If you already have a similar project setup, you can also jump straight to the [Twitter OAuth2 Implementation](#twitter-oauth2-implementation) section.
 
 ## Project Setup
+
 Firstly, let's add a `package.json` file at the root directory and add the following content:
 
 ```json
 {
   "private": true,
-  "workspaces": [
-    "server",
-    "client"
-  ],
+  "workspaces": ["server", "client"],
   "scripts": {
     "client:dev": "yarn workspace client dev",
     "server:dev": "yarn workspace server dev",
@@ -51,53 +52,66 @@ Firstly, let's add a `package.json` file at the root directory and add the follo
   }
 }
 ```
+
 You can set up version control in this directory, but that is optional. Either way, we will now add a client and server for our web app.
+
 ### Client setup
+
 Make a Next.js app by running the following commands:
+
 ```bash
 yarn create next-app --typescript client
 ```
+
 Skip the `--typescript` flag if you want to work with javascript.
 
-
 ```ts
-import { CLIENT_URL, COOKIE_NAME, JWT_SECRET, prisma, SERVER_PORT } from "./config";
-import cookieParser from "cookie-parser";
-import cors from "cors";
-import express from "express";
-import jwt from 'jsonwebtoken'
-import { getTwitterUser, twitterOauth } from "./oauth2";
-import { User } from "@prisma/client";
+import { User } from "@prisma/client"
+import cookieParser from "cookie-parser"
+import cors from "cors"
+import express from "express"
+import jwt from "jsonwebtoken"
 
-const app = express();
-const origin= [CLIENT_URL];
-app.use(cookieParser());
-app.use(cors({
-  origin,
-  credentials: true
-}))
-app.get("/ping", (_, res) => res.json("pong"));
+import {
+  CLIENT_URL,
+  COOKIE_NAME,
+  JWT_SECRET,
+  SERVER_PORT,
+  prisma,
+} from "./config"
+import { getTwitterUser, twitterOauth } from "./oauth2"
 
-type UserJWTPayload = Pick<User, 'id'|'type'> & {accessToken: string}
+const app = express()
+const origin = [CLIENT_URL]
+app.use(cookieParser())
+app.use(
+  cors({
+    origin,
+    credentials: true,
+  })
+)
+app.get("/ping", (_, res) => res.json("pong"))
 
-app.get('/me', async (req, res)=>{
+type UserJWTPayload = Pick<User, "id" | "type"> & { accessToken: string }
+
+app.get("/me", async (req, res) => {
   try {
-    const token = req.cookies[COOKIE_NAME];
+    const token = req.cookies[COOKIE_NAME]
     if (!token) {
-      throw new Error("Not Authenticated");
+      throw new Error("Not Authenticated")
     }
-    const payload = await jwt.verify(token, JWT_SECRET) as UserJWTPayload;
+    const payload = (await jwt.verify(token, JWT_SECRET)) as UserJWTPayload
     const userFromDb = await prisma.user.findUnique({
       where: { id: payload?.id },
-    });
-    if (!userFromDb) throw new Error("Not Authenticated");
+    })
+    if (!userFromDb) throw new Error("Not Authenticated")
     if (userFromDb.type === "twitter") {
       if (!payload.accessToken) {
-        throw new Error("Not Authenticated");
+        throw new Error("Not Authenticated")
       }
-      const twUser = await getTwitterUser(payload.accessToken);
+      const twUser = await getTwitterUser(payload.accessToken)
       if (twUser?.id !== userFromDb.id) {
-        throw new Error("Not Authenticated");
+        throw new Error("Not Authenticated")
       }
     }
     res.json(userFromDb)
@@ -107,9 +121,12 @@ app.get('/me', async (req, res)=>{
 })
 
 // activate twitterOauth function when visiting the route
-app.get("/oauth/twitter", twitterOauth);
-app.listen(SERVER_PORT, () => console.log(`Server listening on port ${SERVER_PORT}`))
+app.get("/oauth/twitter", twitterOauth)
+app.listen(SERVER_PORT, () =>
+  console.log(`Server listening on port ${SERVER_PORT}`)
+)
 ```
+
 It is done now! Let's see what happens when we click the Twitter button on our client and authorize the app there.
 
 ![Successful login and setting up cookies in FE](https://raw.githubusercontent.com/Reinforz/twitter-oauth2-blog/main/images/9.png)
@@ -117,7 +134,7 @@ It is done now! Let's see what happens when we click the Twitter button on our c
 We see our Twitter username in there instead of the Twitter button now, which shows that the `me` query is being executed successfully. As a result, we now have a working user authentication system, via Twitter OAuth 2.0, in our minimal full-stack web application.
 
 ## Conclusion
+
 Thanks for reading! [This](https://github.com/Reinforz/twitter-oauth2-blog) is the Github repository with all the codes. Find more fun things you can do with the Twitter API [here](https://developer.twitter.com/en/docs/api-reference-index). Another example implementation of authentication via Twitter OAuth 2.0 can be found [here](https://github.com/imoxto/imodit).
 
-
-*Written by [Rafid Hamid](https://github.com/imoxto)*
+_Written by [Rafid Hamid](https://github.com/imoxto)_

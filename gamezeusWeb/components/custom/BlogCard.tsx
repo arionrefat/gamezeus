@@ -1,6 +1,7 @@
-import * as React from 'react'
-import Image from 'next/image'
-import { BlogCardProps } from '@/types/blogs'
+import * as React from "react"
+import Image from "next/image"
+
+import { BlogCardProps } from "@/types/blogs"
 import {
   Card,
   CardContent,
@@ -8,13 +9,13 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card'
+} from "@/components/ui/card"
 
-import ProfileImg from './ProfileImg'
+import ProfileImg from "./ProfileImg"
 
-export default function BlogCardSquare(props: BlogCardProps){
+export default function BlogCardSquare(props: BlogCardProps) {
   return (
-    <Card className='h-auto w-full sm:h-[400px] sm:max-w-xs'>
+    <Card className="h-auto w-full sm:h-[400px] sm:max-w-xs">
       <CardHeader>
         <Image
           src={props.imgSrc}
@@ -25,14 +26,12 @@ export default function BlogCardSquare(props: BlogCardProps){
       </CardHeader>
       <CardContent>
         <CardTitle>{props.cardTitle}</CardTitle>
-        <CardDescription>
-          {props.cardDescription}
-        </CardDescription>
+        <CardDescription>{props.cardDescription}</CardDescription>
       </CardContent>
-      <CardFooter className='flex justify-between'>
+      <CardFooter className="flex justify-between">
         <ProfileImg
-          imgSrc='https://avatars.githubusercontent.com/u/37513070?s=400&u=325b69876a241ec0e504c80918325016c5a12b30&v=4'
-          altName='Refatul'
+          imgSrc="https://avatars.githubusercontent.com/u/37513070?s=400&u=325b69876a241ec0e504c80918325016c5a12b30&v=4"
+          altName="Refatul"
         />
         <p>{props.publishedDate}</p>
       </CardFooter>

@@ -1,15 +1,15 @@
-'use client'
+"use client"
 
-import * as React from 'react'
-import Link from 'next/link'
+import * as React from "react"
+import Link from "next/link"
 
-import { NavItem } from '@/types/nav'
-import { siteConfig } from '@/config/site'
-import { cn } from '@/lib/utils'
-import { Icons } from '@/components/icons'
+import { NavItem } from "@/types/nav"
+import { siteConfig } from "@/config/site"
+import { cn } from "@/lib/utils"
+import { Icons } from "@/components/icons"
 
-import DropdownMenuRadioGroupCatagories from './custom/Categories'
-import { MobileNav } from './mobile-nav'
+import DropdownMenuRadioGroupCatagories from "./custom/Categories"
+import { MobileNav } from "./mobile-nav"
 
 interface MainNavProps {
   items?: NavItem[]
@@ -24,18 +24,18 @@ export function MainNav({ items, children }: MainNavProps) {
   )
 
   return (
-    <div className='flex gap-6 md:gap-10'>
-      <Link href='/' className='hidden items-center space-x-2 md:flex'>
-        <Icons.logo className='h-6 w-6' />
-        <span className='hidden font-bold sm:inline-block'>
+    <div className="flex gap-6 md:gap-10">
+      <Link href="/" className="hidden items-center space-x-2 md:flex">
+        <Icons.logo className="h-6 w-6" />
+        <span className="hidden font-bold sm:inline-block">
           {siteConfig.name}
         </span>
       </Link>
       {items?.length ? (
-        <nav className='hidden gap-6 md:flex'>
+        <nav className="hidden gap-6 md:flex">
           <DropdownMenuRadioGroupCatagories
             props={{
-              title: 'Categories',
+              title: "Categories",
               items: categoryNavItems,
             }}
           />
@@ -46,8 +46,8 @@ export function MainNav({ items, children }: MainNavProps) {
                   key={index}
                   href={item.href}
                   className={cn(
-                    'flex items-center text-lg font-semibold text-muted-foreground sm:text-sm',
-                    item.disabled && 'cursor-not-allowed opacity-80'
+                    "flex items-center text-lg font-semibold text-muted-foreground sm:text-sm",
+                    item.disabled && "cursor-not-allowed opacity-80"
                   )}
                 >
                   {item.title}
@@ -57,11 +57,11 @@ export function MainNav({ items, children }: MainNavProps) {
         </nav>
       ) : null}
       <button
-        className='flex items-center space-x-2 md:hidden'
+        className="flex items-center space-x-2 md:hidden"
         onClick={() => setShowMobileMenu(!showMobileMenu)}
       >
         <Link href="/" className="flex items-center space-x-2">
-        <Icons.logo className='h-6 w-6' />
+          <Icons.logo className="h-6 w-6" />
           <span className="font-bold">{siteConfig.name}</span>
         </Link>
         {showMobileMenu && <Icons.close />}

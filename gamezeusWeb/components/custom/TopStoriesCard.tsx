@@ -1,11 +1,6 @@
-import Image from 'next/image'
+import Image from "next/image"
 
-import {
-  Card,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { Card, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
 interface TopStoriesCardProps {
   imgSrc: string
@@ -13,9 +8,9 @@ interface TopStoriesCardProps {
   cardTitle: string
 }
 
-export default function TopStoriesCard(props: TopStoriesCardProps){
+export default function TopStoriesCard(props: TopStoriesCardProps) {
   return (
-    <Card className='w-[320px]'>
+    <Card className="w-[320px]">
       <CardHeader>
         <Image
           src={props.imgSrc}
@@ -24,7 +19,7 @@ export default function TopStoriesCard(props: TopStoriesCardProps){
           width={280}
         />
       </CardHeader>
-      <CardFooter className='flex justify-between'>
+      <CardFooter className="flex justify-between">
         <CardTitle>{props.cardTitle}</CardTitle>
       </CardFooter>
     </Card>
