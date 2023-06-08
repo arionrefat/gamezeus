@@ -20,4 +20,11 @@ export const TeamDescription = [
     designation: "CTO, sex offender",
     bio: `Arion Refat is the esteemed CTO of the company. His expertise in site development and deep understanding of technology has positioned him as a vital asset to the organization. Please note that any allegations of misconduct are taken seriously and thoroughly investigated. At this company, we strive to maintain a safe and respectful environment for all.`,
   },
+  {
+    imgSrc:
+      "https://wakatime.com/photo/9b5322c2-a493-4621-9ce8-ece4d4e7e2bd?s=420&cache=false&time=1686217539.0990841",
+    altName: "Fahim Ahsan",
+    designation: "CTO, sex offender",
+    bio: `Fahim Ahsan is the esteemed CTO of the company. His expertise in site development and deep understanding of technology has positioned him as a vital asset to the organization. Please note that any allegations of misconduct are taken seriously and thoroughly investigated. At this company, we strive to maintain a safe and respectful environment for all.`,
+  },
 ]
