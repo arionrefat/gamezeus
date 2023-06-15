@@ -39,7 +39,7 @@ export default function IndexPage() {
             Titanfall 2 the greatest game of all time
           </h1>
           <p className="text-xl text-muted-foreground text-center">
-            The legacy that has been forgotten my corpo greed but not forgetten
+            The legacy that has been forgotten by corpo greed but not forgotten
             by gamers
           </p>
         </div>
