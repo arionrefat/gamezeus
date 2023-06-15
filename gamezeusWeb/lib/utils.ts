@@ -19,3 +19,5 @@ export async function fetchAxios(url: string, options?: {}) {
     console.log(error)
   }
 }
+
+export const strapiURL = process.env.SERVER_URL

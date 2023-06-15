@@ -9,6 +9,8 @@ import {
 import { Separator } from "@/components/ui/separator"
 import BlogCardSquare from "@/components/custom/BlogCard"
 import ProfileImg from "@/components/custom/ProfileImg"
+import { fetchAxios, strapiURL } from "@/lib/utils"
+import { UserType } from "@/types/users"
 
 interface AuthorsPageProps {
   params: {
@@ -23,7 +25,7 @@ interface AuthorNames {
 
 export async function generateStaticParams() {
   const response = await fetch(
-    "http://127.0.0.1:1337/api/users?fields=username",
+    `${strapiURL}/api/users?fields=username`,
     {
       cache: "no-store",
     }
@@ -37,6 +39,10 @@ export async function generateStaticParams() {
 }
 
 export default async function AuthorsPage({ params }: AuthorsPageProps) {
+  const users: UserType[] = await fetchAxios(`${strapiURL}/api/users?filters[username][$eq]=${params.author}&populate=*`)
+
+  const user = users[0]
+
   return (
     <div className="container py-2">
       <div className="flex items-center md:flex-row md:justify-between">
@@ -50,11 +56,9 @@ export default async function AuthorsPage({ params }: AuthorsPageProps) {
           </CardHeader>
           <CardFooter className="pt-6">
             <div>
-              <CardTitle className="pb-2">{params.author}</CardTitle>
+              <CardTitle className="pb-2">{user.fullname}</CardTitle>
               <CardDescription>
-                Samam Hasan is a renowned game journalist known for his profound
-                insights and Pulitzer Prize-winning storytelling. His
-                comprehensive game reviews, underpinned by deep analysis
+                {user.bio}
               </CardDescription>
             </div>
           </CardFooter>

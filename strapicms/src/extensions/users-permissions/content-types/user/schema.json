@@ -91,6 +91,9 @@
       "relation": "oneToMany",
       "target": "api::article.article",
       "mappedBy": "author"
+    },
+    "designation": {
+      "type": "string"
     }
   }
 }

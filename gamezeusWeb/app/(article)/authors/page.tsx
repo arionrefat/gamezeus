@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 import { UserType } from "@/types/users"
-import { fetchAxios } from "@/lib/utils"
+import { fetchAxios, strapiURL } from "@/lib/utils"
 import {
   Card,
   CardDescription,
@@ -17,7 +17,7 @@ export const metadata = {
 }
 
 export default async function AuthorsPage() {
-  const users: UserType[] = await fetchAxios("http://127.0.0.1:1337/api/users")
+  const users: UserType[] = await fetchAxios(`${strapiURL}/api/users?populate=*`)
 
   return (
     <div className="container max-w-4xl py-6 sm:max-w-max lg:py-10">
@@ -29,11 +29,11 @@ export default async function AuthorsPage() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {users ? (
             users.map((author, index) => (
-              <Link href={`/authors/${author.uuid}`} key={index}>
+              <Link href={`/authors/${author.username}`} key={index}>
                 <Card className="flex w-[326px]">
                   <CardHeader>
                     <ProfileImg
-                      imgSrc={author.avatar}
+                      imgSrc={strapiURL +  author.photo.formats.thumbnail.url}
                       altName={author.username}
                       className="h-11 w-11"
                     />
