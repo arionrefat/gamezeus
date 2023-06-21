@@ -8,9 +8,9 @@ export const photoBanner = {
 }
 
 export const siteConfig = {
-  name: "GameZeus",
+  name: "Thirdtrigger",
   description:
-    "Beautifully designed components built with Radix UI and Tailwind CSS.",
+    "Reviews and news about games for the masses",
   mainNav: [
     {
       title: "Home",

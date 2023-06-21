@@ -11,10 +11,11 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "@strapi/strapi": "4.7.0",
-    "@strapi/plugin-users-permissions": "4.7.0",
     "@strapi/plugin-i18n": "4.7.0",
-    "pg": "8.8.0"
+    "@strapi/plugin-users-permissions": "4.7.0",
+    "@strapi/strapi": "4.7.0",
+    "pg": "8.8.0",
+    "strapi-plugin-responsive-image": "^1.0.1"
   },
   "author": {
     "name": "GaziRefat"

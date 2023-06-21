@@ -24,8 +24,10 @@ export function SiteFooter() {
         </div>
         <div className="flex flex-col space-x-0 space-y-4 text-muted-foreground sm:flex-row sm:space-x-4 sm:space-y-0 md:text-left">
           <Link
-            href="/privacy"
+            href="https://unruly-beast-cd1.notion.site/Privacy-Policy-6fe8fd8a59ae4cd7bdf5e2f588e1d6bf"
             className="font-medium underline-offset-4 hover:underline"
+            target='_blank'
+            rel="noreferrer noopener"
           >
             Privacy
           </Link>

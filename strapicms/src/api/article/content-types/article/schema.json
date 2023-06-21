@@ -37,6 +37,12 @@
     },
     "description": {
       "type": "string"
+    },
+    "catagory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::catagory.catagory",
+      "inversedBy": "articles"
     }
   }
 }

@@ -8621,6 +8621,11 @@ std-env@^3.0.1:
   resolved "https://registry.yarnpkg.com/std-env/-/std-env-3.3.3.tgz#a54f06eb245fdcfef53d56f3c0251f1d5c3d01fe"
   integrity sha512-Rz6yejtVyWnVjC1RFvNmYL10kgjC49EOghxWn0RFqlCHGFpQx+Xe7yW3I4ceK1SGrWIGMjD5Kbue8W/udkbMJg==
 
+strapi-plugin-responsive-image@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-responsive-image/-/strapi-plugin-responsive-image-1.0.1.tgz#5f81e8425878c08cedd70bd8e83f6b64ebe2710c"
+  integrity sha512-O3eYOyvakFzhXsrmi0Zf1Ovbr9lgFApDCOP+E5ymav/9qX3njyOTBkLzzYaAsG1vRZjW4hrLiaaHpf1x78dSzg==
+
 stream-chain@2.2.5, stream-chain@^2.2.5:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/stream-chain/-/stream-chain-2.2.5.tgz#b30967e8f14ee033c5b9a19bbe8a2cba90ba0d09"
