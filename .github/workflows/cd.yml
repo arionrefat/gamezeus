@@ -35,16 +35,6 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Fetch .env files from remote server
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.REMOTE_SSH_SERVER }}
-          username: ${{ secrets.REMOTE_SSH_USER }}
-          key: ${{ secrets.REMOTE_SSH_KEY }}
-          script: |
-            scp -o StrictHostKeyChecking=no -i ${{ secrets.REMOTE_SSH_KEY }} ${{ secrets.REMOTE_SSH_USER }}@${{ secrets.REMOTE_SSH_SERVER }}:/home/refat/.env.local thirdtrigger
-            scp -o StrictHostKeyChecking=no -i ${{ secrets.REMOTE_SSH_KEY }} ${{ secrets.REMOTE_SSH_USER }}@${{ secrets.REMOTE_SSH_SERVER }}:/home/refat/.env strapicms
-
       - name: Build and package ThirdTrigger
         id: build_thirdtrigger
         if: needs.check_changes.outputs.thirdtrigger == 'true'
@@ -77,3 +67,5 @@ jobs:
             scp ${{ github.workspace }}/strapicms.zip /home/refat/thirdtrigger/strapicms.zip
             unzip -o /home/refat/thirdtrigger/thirdtrigger.zip -d /home/refat/thirdtrigger
             unzip -o /home/refat/thirdtrigger/strapicms.zip -d /home/refat/thirdtrigger
+            cp /home/refat/.env.local /home/refat/thirdtrigger/thirdtrigger
+            cp /home/refat/.env /home/refat/thirdtrigger/strapicms
