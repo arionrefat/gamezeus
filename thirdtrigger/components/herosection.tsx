@@ -28,10 +28,10 @@ export default function HeroSection() {
         />
 
         <div className='absolute bottom-0 w-full'>
-          <h1 className='text-5xl text-center font-extrabold leading-tight tracking-tighter text-muted-foreground'>
+          <h1 className='text-center text-5xl font-extrabold leading-tight tracking-tighter text-muted-foreground'>
             Titanfall 2 the greatest game of all time
           </h1>
-          <p className='text-xl text-muted-foreground text-center'>
+          <p className='text-center text-xl text-muted-foreground'>
             The legacy that has been forgotten by corpo greed but not forgotten
             by gamers
           </p>

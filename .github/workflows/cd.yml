@@ -53,6 +53,7 @@ jobs:
         run: |
           cd thirdtrigger
           npm ci
+          npm run lint:fix
           npm run build
           zip -r ../thirdtrigger.zip .next/
 
