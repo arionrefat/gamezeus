@@ -28,6 +28,7 @@ export default function CategoriesTabs() {
                   cardTitle={blogs.cardTitle}
                   cardDescription={blogs.cardDescription}
                   publishedDate={blogs.publishedDate}
+                  author={blogs.author}
                 />
               </div>
             ))}
