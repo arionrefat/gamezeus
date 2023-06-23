@@ -2,7 +2,7 @@ name: Build and Deploy
 
 on:
   pull_request:
-    branches: ["**"]
+    branches: ['**']
 
 jobs:
   check_changes:
@@ -42,10 +42,8 @@ jobs:
           username: ${{ secrets.REMOTE_SSH_USER }}
           key: ${{ secrets.REMOTE_SSH_KEY }}
           script: |
-            mkdir -p ${{github.workspace}}/thirdtrigger
-            mkdir -p ${{github.workspace}}/strapicms
-            scp /home/refat/.env.local ${{ github.workspace }}/thirdtrigger/.env.local
-            scp /home/refat/.env ${{ github.workspace }}/strapicms/.env
+            scp -o StrictHostKeyChecking=no -i ${{ secrets.REMOTE_SSH_KEY }} ${{ secrets.REMOTE_SSH_USER }}@${{ secrets.REMOTE_SSH_SERVER }}:/home/refat/.env.local thirdtrigger
+            scp -o StrictHostKeyChecking=no -i ${{ secrets.REMOTE_SSH_KEY }} ${{ secrets.REMOTE_SSH_USER }}@${{ secrets.REMOTE_SSH_SERVER }}:/home/refat/.env strapicms
 
       - name: Build and package ThirdTrigger
         id: build_thirdtrigger
@@ -64,7 +62,7 @@ jobs:
           cd strapicms
           yarn
           yarn build
-          zip -r ../strapicms.zip .build/
+          zip -r ../strapicms.zip dist/
 
       - name: Deploy to SSH Server
         if: needs.check_changes.outputs.thirdtrigger == 'true' || needs.check_changes.outputs.strapicms == 'true'
