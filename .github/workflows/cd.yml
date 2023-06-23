@@ -62,8 +62,8 @@ jobs:
         if: needs.check_changes.outputs.strapicms == 'true'
         run: |
           cd strapicms
-          npm ci
-          npm run build
+          yarn
+          yarn build
           zip -r ../strapicms.zip .build/
 
       - name: Deploy to SSH Server
