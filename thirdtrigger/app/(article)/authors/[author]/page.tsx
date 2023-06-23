@@ -24,7 +24,7 @@ interface AuthorNames {
 }
 
 export async function generateStaticParams() {
-  const response = await fetch(`${strapiURL}/api/users?fields=username`, {
+  const response = await fetch(`https://strapi.gazirefat.me/api/users?fields=username`, {
     cache: 'no-store',
   })
 
