@@ -61,11 +61,11 @@ jobs:
           host: ${{ secrets.REMOTE_SSH_SERVER }}
           username: ${{ secrets.REMOTE_SSH_USER }}
           key: ${{ secrets.REMOTE_SSH_KEY }}
-          script: |
-            mkdir -p /home/refat/thirdtrigger
-            scp ${{ github.workspace }}/thirdtrigger.zip /home/refat/thirdtrigger/thirdtrigger.zip
-            scp ${{ github.workspace }}/strapicms.zip /home/refat/thirdtrigger/strapicms.zip
-            unzip -o /home/refat/thirdtrigger/thirdtrigger.zip -d /home/refat/thirdtrigger
-            unzip -o /home/refat/thirdtrigger/strapicms.zip -d /home/refat/thirdtrigger
-            cp /home/refat/.env.local /home/refat/thirdtrigger/thirdtrigger
-            cp /home/refat/.env /home/refat/thirdtrigger/strapicms
+        source: "thirdtrigger.zip, strapicms.zip"
+        target: /home/refat/thirdtrigger
+        script: |
+          cp /home/refat/.env.local /home/refat/thirdtrigger/thirdtrigger/.env.local
+          cp /home/refat/.env /home/refat/thirdtrigger/strapicms/.env
+          unzip -o /home/refat/thirdtrigger/thirdtrigger.zip -d /home/refat/thirdtrigger/thirdtrigger
+          unzip -o /home/refat/thirdtrigger/strapicms.zip -d /home/refat/thirdtrigger/strapicms
+
