@@ -64,7 +64,7 @@ jobs:
           source: "thirdtrigger.zip, strapicms.zip"
           target: /home/refat/thirdtrigger
           script: |
-            cp /home/refat/.env.local /home/refat/thirdtrigger/thirdtrigger/.env.local
-            cp /home/refat/.env /home/refat/thirdtrigger/strapicms/.env
             unzip -o /home/refat/thirdtrigger/thirdtrigger.zip -d /home/refat/thirdtrigger/thirdtrigger
             unzip -o /home/refat/thirdtrigger/strapicms.zip -d /home/refat/thirdtrigger/strapicms
+            cp /home/refat/.env.local /home/refat/thirdtrigger/thirdtrigger/.env.local
+            cp /home/refat/.env /home/refat/thirdtrigger/strapicms/.env
