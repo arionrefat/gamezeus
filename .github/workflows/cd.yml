@@ -62,7 +62,7 @@ jobs:
           username: ${{ secrets.REMOTE_SSH_USER }}
           key: ${{ secrets.REMOTE_SSH_KEY }}
         source: "thirdtrigger.zip, strapicms.zip"
-        target: /home/refat/thirdtrigger
+        target: "/home/refat/thirdtrigger"
         script: |
           cp /home/refat/.env.local /home/refat/thirdtrigger/thirdtrigger/.env.local
           cp /home/refat/.env /home/refat/thirdtrigger/strapicms/.env
