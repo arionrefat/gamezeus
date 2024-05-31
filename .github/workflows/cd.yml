@@ -1,0 +1,70 @@
+name: Build and Deploy
+
+on:
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  check_changes:
+    runs-on: ubuntu-latest
+    outputs:
+      thirdtrigger: ${{ steps.filter.outputs.thirdtrigger }}
+      strapicms: ${{ steps.filter.outputs.strapicms }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Path Filters
+        uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            thirdtrigger:
+              - 'thirdtrigger/**'
+            strapicms:
+              - 'strapicms/**'
+
+  build:
+    needs: check_changes
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18"
+
+      - name: Build and package ThirdTrigger
+        id: build_thirdtrigger
+        if: needs.check_changes.outputs.thirdtrigger == 'true'
+        run: |
+          cd thirdtrigger
+          npm ci
+          npm run lint:fix
+          npm run build
+          zip -r ../thirdtrigger.zip .next/
+
+      - name: Build and package StrapiCMS
+        id: build_strapicms
+        if: needs.check_changes.outputs.strapicms == 'true'
+        run: |
+          cd strapicms
+          yarn
+          yarn build
+          zip -r ../strapicms.zip dist/
+
+      - name: Deploy to SSH Server
+        if: needs.check_changes.outputs.thirdtrigger == 'true' || needs.check_changes.outputs.strapicms == 'true'
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REMOTE_SSH_SERVER }}
+          username: ${{ secrets.REMOTE_SSH_USER }}
+          key: ${{ secrets.REMOTE_SSH_KEY }}
+          source: "thirdtrigger.zip, strapicms.zip"
+          target: /home/refat/thirdtrigger
+          script: |
+            unzip -o /home/refat/thirdtrigger/thirdtrigger.zip -d /home/refat/thirdtrigger/thirdtrigger
+            unzip -o /home/refat/thirdtrigger/strapicms.zip -d /home/refat/thirdtrigger/strapicms
+            cp /home/refat/.env.local /home/refat/thirdtrigger/thirdtrigger/.env.local
+            cp /home/refat/.env /home/refat/thirdtrigger/strapicms/.env
